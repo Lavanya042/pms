@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body{
+          background-image: url(https://hitinfrastructure.com/images/site/article_headers/_normal/Data_integration.jpg);
+          background-size: cover;
+        }
+        h1{
+          font-size: 300%;
+        }
+        form{
+    height: 600px;
+    width: 400px;
+    background-color: rgba(255,255,255,0.13);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(-2px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px;
+}
+form *{
+    font-family: 'Poppins',sans-serif;
+    color: #141313;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+form h1{
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+input{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 10px;
+    padding: 0 10px;
+    margin-top: 30px;
+    font-size: 14px;
+    font-weight: 300;
+    backdrop-filter: blur(50px);
+}
+::placeholder{
+    color: #010b12;
+    font-size: 90%;
+}
+button{
+    margin-top: 50px;
+    width: 90%;
+    background-color: transparent;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover{
+  background-color: #118c72;
+  }
+  label{
+    display: block;
+    margin-top: 25px;
+    font-size: 20px;
+}
+    </style>    
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<body>
+    <form method="POST">
+        <div>
+            <p class="icon"><i class="fa-solid fa-user"></i></p>
+            <h1>Admin Login</h1>
+            <label>username</label><br>
+            <input placeholder="Enter email or username" type="text" name="name"/><br>
+            <label>password</label><br>
+            <input placeholder="password" type="text" name="password"/><br><br>
+            <a style="text-decoration: none;" href="{{url_for('forget')}}">forgetpassword</a>
+           <button>login</button>
+          </div>
+    </form>
+</body>
+</html>

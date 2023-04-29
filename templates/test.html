@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Add test</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+        body {
+            background-image: url(https://tse2.mm.bing.net/th?id=OIP.xH1jSE7C6soPVpJj-Phk6AHaEI&pid=Api&P=0);
+            background-size: cover;
+        }
+        .btnstyle {
+            background-color:rgb(8, 8, 119);
+            color:white;
+            padding:10px;
+            border-radius: 8px;
+            border:none;
+            margin: 10px;
+            cursor: pointer;
+        }
+        label{
+            color: aliceblue;
+            font-weight: bold;
+        }
+        h1{
+            color: aliceblue;
+            margin-top: 10%;
+        }
+        form{
+        height: 600px;
+        width: 400px;
+        background-color: rgba(255,255,255,0.13);
+        position: absolute;
+        transform: translate(-50%,-50%);
+        top: 50%;
+        left: 50%;
+        border-radius: 10px;
+        backdrop-filter: blur(-2px);
+        border: 2px solid rgba(255,255,255,0.1);
+        box-shadow: 0 0 40px rgba(8,7,16,0.6);
+        padding: 50px 35px;
+        }
+        #name{
+            margin-top: 1%;
+        }
+        input{ 
+            border-radius: 8px; 
+            font-size: 100%; 
+            padding-top: 3px; 
+            padding-bottom: 3px;
+            background-color: transparent;
+        }
+        ::placeholder{
+            color: aliceblue;
+        }
+        textarea{
+            border-radius: 8px; 
+            font-size: 100%; 
+            padding-top: 3px; 
+            padding-bottom: 3px;
+            background-color: transparent;
+        }
+        textarea::placeholder{
+            color: aliceblue;
+        }
+    </style>
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<body>
+    <button style="float:right" class="btnstyle" onclick="history.back()">Back</button>
+    <form method="POST">
+        <div>
+            <h1>Add Test</h1>
+        </div>
+        <label for="empCode">Mobileno</label><br>
+        <select name="mobileno" id="name" >
+            {% for i in data %}
+             <option>{{i[0]}}</option>
+            {% endfor %}
+        </select><br><br>
+        <label>Testname</label>
+        <p><input style="color: aliceblue;" placeholder="Enter testname" type="text" name="testname" required/></p>
+        <label>Testresult</label>
+        <p><textarea rows="9" style="color: aliceblue; width: 98%;" placeholder="Enter Test Result" name="testresult" required></textarea></p>
+        <button class="btnstyle">Submit</button>
+    </form>
+</body>
+</html>

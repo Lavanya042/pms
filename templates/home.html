@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <style>
+      body{
+         background-image: url(https://tse1.mm.bing.net/th?id=OIP.MKNq8klAnIOiUPPUpRh2TAHaCy&pid=Api&P=0.jpg);
+         background-size: cover;
+         height: 80vh;
+         width: 100%;
+      }
+        .header{
+            font-size: 200%;
+            margin-left: 1%;
+            color: rgb(15, 15, 65);
+            width: 15%;
+         }
+         nav {
+            background-color: #261f64;
+            width: 1450px;
+            height: 6vh;
+            border-radius: 8px;
+         }
+         a{
+            color: aliceblue;
+            font-size: 160%;
+            font-display: none;
+            margin-left: 4%;
+            border: none;
+            text-decoration: none;
+         }
+         .sec1{
+            display: flex;
+         }
+         button{
+            background-color: #261f64;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            border: none;
+            font-size: 100%;
+            margin-left: 0%;
+         }
+         .serch1{
+            margin-top: 2%;
+            width: 23%;
+            font-size: 100%;
+            height: 4vh;
+            border-radius: 8px;
+            background-color: transparent;
+         }
+         #i2{
+            margin-left: 10%;
+            font-size: 120%;
+            margin-top: 1%;
+            color: #261f64;
+         }
+         #i1{
+            color: azure;
+            margin-left: 7%;
+         }
+         .quotes{
+            margin-left: 57%;
+            margin-top: 7%;
+         }
+         .c1{
+            margin-left: 10%;
+         }
+         #i3{
+            font-size: 85%;
+            margin-right: 0.5%;
+         }
+         .location{
+            font-size: 100%;
+            color: rgb(244, 245, 247);
+            
+         }
+         .button3{
+            background-color: #261f64;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            border: none;
+            font-size: 100%;
+            margin-left: 9%;
+            margin-top: 3%;
+         }
+         .sec2{
+            margin-top: 10%;
+            background-color: aliceblue;
+            height: 190vh;
+            width: 100%;
+         }
+         .htag{
+            text-align: center;
+            margin-top: 3%;
+         }
+         .htag1{
+            margin-top: 5%;
+         }
+         .div11{
+            backface-visibility: visible;
+            height: 18%;
+            width: 18%;
+            margin-left: 2%;
+            margin-top: 3%;
+            display: inline-block;
+            padding-left: 5%;
+            padding-top: 2%;
+            margin-left: 7%;
+         }
+         .onsr{
+            display: flex;
+         }
+         .onlinehelp{
+            margin-top: 6%;
+            margin-left: 20%;
+         }
+         .sec3{
+            height: 30vh;
+            width: 1520px;
+            background-color: aliceblue;
+         }
+         #dd{
+            margin-top: 10%;
+            margin-left: 38%;
+         }
+     </style>
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<body>
+   <div class="sec1">
+   <div class="header">
+    <p><i class="fa-solid fa-stethoscope"></i>Hospital</p>
+   </div>
+   <nav>
+      <a href="#"><i class="fa-solid fa-house" id="i3"></i>Home</a>
+      <a href="#"><i class="fa-solid fa-phone" id="i3"></i>contact</a>
+      <a href="{{url_for('addpatient')}}"><i class="fa-solid fa-user" id="i3"></i>Addpatients</a>
+      <a href="{{url_for('patientsrecords')}}"><i class="fa-solid fa-bed" id="i3"></i>patientsrecords</a>
+      <a href="{{url_for('addtest')}}"><i class="fa-solid fa-microscope" id="i3"></i></i>Addtests</a>
+      <a href="{{url_for('logout')}}" style="margin-left: 10%;">logout</a>
+      <div class="nav2">
+         <i class="fa-sharp fa-solid fa-magnifying-glass" id="i2"></i>
+         <input placeholder="serch here...." type="text" class="serch1"/>
+         <a class="location"><i style="margin-left: 4%; font-size: 100%; color: beige; margin-right: 0.5%;" class="fa-solid fa-location-dot"></i>Find our Location</a>
+      </div>
+   </nav>
+   </div>
+   <div class="quotes">
+         <h1>THE MOST VALUBLE THING</h1>
+         <h1 class="c1">IS YOUR HEALTH</h1>
+         <div class="pt">
+         <p>we care about your health Even the all-powerfull pointing has
+             no control about </p> 
+             <p style="margin-left: 7%;">the blind texts it is an almost unorthographic life</p>
+             <button class="button3">more details</button>
+         </div> 
+   </div>
+   <section class="sec2">
+      <div class="htag">
+      <h1 style="font-size: 250%;" class="htag1"><span>How</span> <span style="color: #60b6ec;">It Works</span></h1>
+      <p style="font-size: 200;">we start with your needs and design a personalized solution for you</p>
+      </div>
+      <div class="div11">
+         <i style="margin-left: 15%; font-size: 300%; color: #261f64;" class="fa-solid fa-headphones"></i>
+         <p style="font-weight: bold; margin-left: 3%;">Tell us what you need</p>
+         <button style="background-color: transparent; color: #261f64; border-style: groove; margin-left: 8%;">CallNow</button>
+      </div>
+      <div class="div11">
+         <i style="margin-left: 21%; font-size: 300%; color: #261f64;" class="fa-solid fa-user-doctor"></i>
+         <p style="font-weight: bold;">Get an Accurate diagnosis</p>
+         <button style="background-color: transparent; color: #261f64; border-style: groove; margin-left: 6%;">GetAppointment</button>
+      </div>
+      <div class="div11">
+         <i style="margin-left: 21%; font-size: 300%; color: #261f64;" class="fa-sharp fa-solid fa-bed"></i>
+         <p style="font-weight: bold; margin-left: 3%;">The Best Room facilities</p>
+         <button style="background-color: transparent; color: #261f64; border-style: groove; margin-left: 5%;">Room Availabilities</button>
+      </div>
+      <!-- Aboutus Section -->
+      <div class="onsr">
+      <div class="onlinehelp">
+         <h1 style="font-size: 250%;"><i class="fa-solid fa-globe"></i> 24 Hours Online Help</h1>
+         <p style="font-weight: bold;">you can call our medical help line 24 Hours in a day in a week.we will be helpfull<br> at any time for your service</p>
+         </div>
+      <div>
+         <img style="margin-left: 80%; margin-top: 25%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNb0Zr88mblRZuJOU0xor
+                   FkRY5E4UKJ8YPHQ&usqp=CAU" alt="image"/>
+      </div>
+      </div>
+      <div style="margin-top: 4%;" class="onsr">
+         <div class="onlinehelp">
+            <h1 style="font-size: 250%;"><i class="fa-solid fa-truck-medical"></i> Any Time 108 are Available </h1>
+            <p style="font-weight: bold;">  Emergency Response Service is a 24X7 emergency service for medical,<br> police and fire emergencies.The service is available for the entire state of Andhra Pradesh</p>
+            </div>
+         <div>
+            <img style="margin-left: 40%; margin-top: 20%;" src="https://img.freepik.com/premium-vector/
+                       emergency-ambulance-service-rescued-team-moving-patient-stretcher-medical-treatment_251139-782.jpg?w=2000" 
+                       alt="image" height="230vh" width="80%"/>
+         </div>
+         </div>
+         <div style="margin-top: 4%;" class="onsr">
+            <div class="onlinehelp">
+               <h1 style="font-size: 250%;"><i class="fa-solid fa-user-doctor"></i>  Our staff </h1>
+               <p style="font-weight: bold;">complement and amplify the effectiveness of many other parts of the health system,<br>providing continuous availability of services for acute and complex conditions.</p>
+               </div>
+            <div>
+               <img style="margin-left: 80%; margin-top: 25%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNb0Zr88mblRZuJOU0xor
+                         FkRY5E4UKJ8YPHQ&usqp=CAU" alt="image"/>
+            </div>
+            </div>
+            <section class="sec3">
+               <div class="sec33">
+               <a href="https://www.facebook.com/campaign/landing.php?campaign_id=15461201666&extra_1=s%7Cc%7C589521732875%7Cb%7Cfacebook%20%27%7C&placement=&creative=589521732875&keyword=facebook%20%27&partner_id=googlesem&extra_2=campaignid%3D15461201666%26adgroupid%3D130924380175%26matchtype%3Db%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-327195741349%26loc_physical_ms%3D9300921%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=Cj0KCQjw3a2iBhCFARIsAD4jQB28hZfLV3H2N5A9OE-Jx8wNmStiplZVznm9it53-oZtpnStjZdFCIgaAnkPEALw_wcB" style="color: #261f64;"><i class="fa-brands fa-facebook-f" id="dd"></i></a>
+               <a href="https://instagram.com/sem/campaign/emailsignup/?campaign_id=13530338610&extra_1=s|c|547419127631|e|instagram%20%27|&placement=&creative=547419127631&keyword=instagram%20%27&partner_id=googlesem&extra_2=campaignid%3D13530338610%26adgroupid%3D126262414014%26matchtype%3De%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-1321618851291%26loc_physical_ms%3D1007742%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=Cj0KCQjw3a2iBhCFARIsAD4jQB2U33w1cDFOj5F2UBKEb2xUoquJaJZj1ogDeMW8YlC6AwcaoBDzIPAaAtj1EALw_wcB" style="color: #261f64;"><i class="fa-brands fa-instagram"></i></a>
+               <a href="https://twitter.com/i/flow/login" style="color: #261f64;"><i class="fa-brands fa-twitter"></i></a>
+               </div>
+            </section>
+</body>
+</html>

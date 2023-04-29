@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add patient</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+        body {
+            background-image: url('https://t3.ftcdn.net/jpg/05/52/06/54/360_F_552065481_f2v6KugntlxzdMRitcgOh2i5PpiTtFGl.jpg');
+            background-size: cover;
+        }
+        button{
+            margin-left: 30%;
+            background-color: rgb(7, 25, 95);
+            color:rgb(249, 245, 245);
+            padding:13px;
+            border-radius: 8px;
+            border:none;
+            margin: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 10%;
+        }
+        .sec1{
+            margin-left: 45%;
+        }
+        input{ 
+            border-radius: 8px; 
+            font-size: 100%; 
+            padding-top: 3px; 
+            padding-bottom: 3px;
+            background-color: transparent;
+        }
+        textarea{
+            border-radius: 8px; 
+            font-size: 100%; 
+            padding-top: 3px; 
+            padding-bottom: 3px;
+            background-color: transparent;
+            width: 90%;
+        }
+        label{
+            color: rgb(7, 63, 112);
+            margin-top: 5%;
+        }
+        h1{
+            color: rgb(13, 46, 74);
+        }
+        i{
+            font-size: 150%;
+        }
+        form{
+            margin-top: 3%;
+            margin-left: 45%;
+        }
+    </style>
+</head>
+<body>
+    <button style="float:right" class="btnstyle">Back</button>
+    <form method="POST">
+        <div>
+            <h1>Update patients</h1>
+        </div>
+        <label>Patientname</label>
+        <p><input type="text" name="patientname" value="{{data[0]}}" required/></p>
+        <label>Mobileno</label>
+        <p><input type="text" name="mobileno" value="{{data[1]}}" required/></p>
+        <label>Age</label>
+        <p><input type="text" name="age" value="{{data[2]}}" required/></p>
+        <label>Address</label>
+        <p><textarea rows="9" style="width:40%"  name="address"  required >value={{data[3]}}</textarea></p>
+        <button class="btnstyle">Submit</button>
+    </form>
+</body>
+</html>

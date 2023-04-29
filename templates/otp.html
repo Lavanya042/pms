@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP validation</title>
+    <style>
+      body{
+        background-image: url(https://i0.wp.com/salienthealthcare.com/wp-content/uploads/2020/03/AdobeStock_133621255-scaled.jpeg?ssl=1);
+        background-size: cover;
+      }
+      form{
+        margin-left: 20%;
+        margin-top: 10%;
+      }
+      button{
+        border-radius: 8px;
+        padding: 5px;
+        width: 5%;
+        font-size: 30%;
+      }
+      h1{
+        color: aliceblue;
+        font-size: 300%;
+      }
+      input{ 
+            border-radius: 8px; 
+            font-size: 100%; 
+            padding-top: 3px; 
+            padding-bottom: 3px;
+            background-color: transparent;
+            border-style: groove;
+            color: aliceblue;
+        }
+        button{
+            background-color: transparent;
+            color: rgb(245, 248, 252);
+            padding: 8px;
+            border-radius: 6px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 120%;
+            width: 10%;
+            margin-top: 3%;
+            border-style: groove;
+            border-width: 3px;
+            margin-left: 2.5%;
+        }
+        ::placeholder{
+          color: aliceblue;
+          font-weight: lighter;
+        }
+    </style>
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+     <center><b>{{ message }}</b></center>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<body>
+    <form method="POST" action="{{url_for('otp',otp=otp,name=name,password=password,email=email)}}">
+      <h1>Enter OTP</h1>
+      <input placeholder="enter otp" type="text" name="otp"><br>
+      <button>submit</button>
+    </form>
+</body>
+</html>

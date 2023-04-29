@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            background-image: url(https://www.rhsmith.umd.edu/sites/default/files/news/featured/2021/05/quest_hospital_project.png);
+            background-size: cover;
+        }
+        b{
+            color:antiquewhite;
+        }
+        label{
+            color: rgb(43, 85, 174);
+            font-size: 120%;
+        }
+        form{
+            margin-left: 40%;
+            margin-top: 15%;
+        }
+        input{ 
+            border-radius: 8px; 
+            font-size: 100%; 
+            padding-top: 3px; 
+            padding-bottom: 3px;
+            background-color: transparent;
+        }
+        h1{
+            margin-left: 65%;
+        }
+        button{
+            background-color: #261f64;
+            color: rgb(245, 248, 252);
+            padding: 10px;
+            border-radius: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            border: none;
+            font-size: 100%;
+            margin-left: 9%;
+            margin-top: 3%;
+        }
+    </style>
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<body>
+    <h1 style="color:rgb(42, 76, 145)">Admin Registration Page</h1>
+    <div style="margin-left:42%;; margin-top:5%">
+    <form method="POST">
+        <label>Name:</label>
+        <p><input placeholder="Enter name" type="text" name="name" required/></p>
+        <label>Password:</label>
+        <p><input placeholder="Enter password" type="text" name="password" required/></p>
+        <label>Email:</label>
+        <p><input placeholder="Enter email" type="text" name="email" required/></p>
+        <button>Register</button>
+    </form>
+</div>
+
+</body>
+</html>

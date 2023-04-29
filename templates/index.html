@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Management System</title>
+    <style>
+        body{
+          background-image: url('static/homepage.jpg');
+          background-size: cover;
+        }
+        .firstdiv{
+          margin-top: 6%;
+          margin-left: 20%;
+        }
+        .em{
+          padding-left: 2%;
+          font-weight: bold;
+          padding-left: 1%;
+        }
+        button{
+          margin-left: 30%;
+          background-color: rgb(44, 80, 222);
+              color:rgb(249, 245, 245);
+              padding:10px;
+              border-radius: 8px;
+              border:none;
+              margin: 10px;
+              cursor: pointer;
+              font-weight: bold;
+        }
+        p{
+          font-weight: bold;
+          text-transform: capitalize;
+        }
+        .hstor:hover{
+          color: rgb(175, 241, 249);
+        }
+        .hstor{
+          color: rgb(122, 214, 237);
+        }
+        .border{
+          border-color: rgb(8, 7, 7);
+          border-radius: none;
+        }
+        .icon{
+          margin-left: 1%;
+          margin-top: 15%;
+          font-size: 600%;
+          margin-bottom: 1%;
+        }
+        h1{
+          font-size: 300%;
+        }
+      </style>
+        
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<body>
+    <form method="POST"></form>
+    <div class="firstdiv">
+        <h1 style="margin-left: 13%;"><i>WelCome To</i></h1>
+        <h1><i>Patient Management System</i></h1>
+        <a href="{{url_for('login')}}"><button style="margin-left: 16%;">Login</button></a>
+        <a href="{{url_for('register')}}"><button>Registration</button></a>
+        </div>
+</body>
+</html>

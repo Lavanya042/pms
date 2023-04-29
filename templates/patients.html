@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add patient</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+        body {
+            background-image: url('https://t3.ftcdn.net/jpg/05/52/06/54/360_F_552065481_f2v6KugntlxzdMRitcgOh2i5PpiTtFGl.jpg');
+            background-size: cover;
+        }
+        button{
+            margin-left: 30%;
+            background-color: rgb(7, 25, 95);
+            color:rgb(249, 245, 245);
+            padding:13px;
+            border-radius: 8px;
+            border:none;
+            margin: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 10%;
+        }
+        .sec1{
+            margin-left: 45%;
+        }
+        input{ 
+            border-radius: 8px; 
+            font-size: 100%; 
+            padding-top: 3px; 
+            padding-bottom: 3px;
+            background-color: transparent;
+        }
+        textarea{
+            border-radius: 8px; 
+            font-size: 100%; 
+            padding-top: 3px; 
+            padding-bottom: 3px;
+            background-color: transparent;
+            width: 90%;
+        }
+        label{
+            color: rgb(7, 63, 112);
+        }
+        h1{
+            color: rgb(13, 46, 74);
+            margin-left: 45%;
+        }
+        i{
+            font-size: 150%;
+        }
+        form{
+            margin-top: 3%;
+        }
+    </style>
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<body>
+    <a style="text-decoration: none;" href="{{url_for('home')}}"><i class="fa-sharp fa-solid fa-arrow-left"></i></a>
+    <h1>Add Patients</h1>
+    <form method="POST" class="sec1">
+        <label>Patientname</label>
+        <p><input placeholder="Enter patientname" type="text" name="patientname" required/></p>
+        <label>Mobileno</label>
+        <p><input placeholder="Enter mobileno" type="text" name="mobileno" required/></p>
+        <label>Age</label>
+        <p><input placeholder="Enter age" type="text" name="age" required/></p>
+        <label>Addresss</label>
+        <p><textarea rows="9" placeholder="Enter Patients Address" name="address" required></textarea></p>
+        <button class="btnstyle">Submit</button>
+    </form>
+</body>
+</html>
